@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come 
+            *after* these tags -->
+        <title>Issue Tracker</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body onload="fetchIssues()">
+        <div class="container">
+            <h1>Issue Tracker</h1>
+            <div class="jumbotron">
+                <h3>Add New Issue:</h3>
+                <form id="issueInputForm">
+                    <div class="form-group">
+                        <label for="issueDescInput">Description</label>
+                        <input type="text" class="form-control" id="issueDescInput" placeholder="Describe the Issue Here"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="issueSeverityInput">Severity</label>
+                        <select class="form-control" id="issueSeverityInput">
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="issueAssignedToInput">Assign To</label>
+                        <input type="text" class="form-control" id="issueAssignedToInput" placeholder="Assign To"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="saveIssue(e)">Add Issue</button>
+                </form>
+            </div>
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="issueList">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>&copy Neelaesh Inc.</p>
+            </div>
+        </div>
+
+        <!-- Jquery Library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap Library -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+        crossorigin="anonymous"></script>
+        <!-- Generate unique identifiers for Issues -->
+        <script src="http://chancejs.com/chance.min.js"></script>
+        <!-- Custom JS -->
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>
